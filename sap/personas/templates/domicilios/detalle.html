@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Detalle del Domicilio</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+    <h1> Detalle Domicilio</h1>
+    <div class="container">
+<!--      <div class="row">-->
+<!--        <div class="col-md-12">-->
+<!--          <p>Domicilio No: {{domicilio.id}}</p>-->
+<!--          <p>Calle: {{domicilio.calle}}</p>-->
+<!--          <p>Número: {{domicilio.numero}}</p>-->
+<!--          <p>Localidad: {{domicilio.localidad}}</p>-->
+
+<!--        </div>-->
+      </div>
+      <div class="container">
+          <div class="row badge rounded-pill text-bg-info">
+              <table class="table">
+                  <thead>
+                    <th>Domicilio No</th>
+                    <th>Calle</th>
+                    <th>Número</th>
+                    <th>Localidad</th>
+                  </thead>
+                    <tbody>
+                        <tr>
+                            <td>{{domicilio.id}}</td>
+                            <td>{{domicilio.calle}}</td>
+                            <td>{{domicilio.numero}}</td>
+                            <td>{{domicilio.localidad}}</td>
+                        </tr>
+                    </tbody>
+              </table>
+          </div>
+      </div>
+      <!-- Regresar al home-->
+        <div class="row">
+            <div class="col-md-12">
+                <button class="btn btn-secondary">
+                    <a href="{% url 'domicilios' %}">Regresar</a>
+                </button>
+            </div>
+        </div>
+
+
+</body>
+</html>

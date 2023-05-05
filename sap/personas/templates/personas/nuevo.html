@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <title>Nueva Persona</title>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  </head>
+  <body>
+  <form method="post">
+      <h1> Agregar Persona</h1>
+      <table>
+          {{formaPersona}}
+
+      </table>
+      <button type="submit" class="btn btn-primary">Enviar</button>
+      {% csrf_token %}
+  </form>
+
+
+  </body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <title>Detalle</title>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  </head>
+  <body>
+    <h1> Detalle Persona</h1>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <p>Persona No: {{persona.id}}</p>
+          <p>Nombre: {{persona.nombre}}</p>
+          <p>Apellido: {{persona.apellido}}</p>
+          <p>Email: {{persona.email}}</p>
+
+        </div>
+      </div>
+      <!-- Regresar al home-->
+        <div class="row">
+            <div class="col-md-12">
+                <a class="btn btn-secondary" href="{% url 'index' %}">Regresar</a>
+            </div>
+        </div>
+
+
+
+  </body>
+</html>

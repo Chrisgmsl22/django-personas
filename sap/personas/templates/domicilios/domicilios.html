@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Domicilios</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+  <h1> Domicilios</h1>
+  <div class="container">
+    <div class="row">
+            <div class="col-md-12">
+                Número de Domicilios: {{domicilios_count}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <button class="btn btn-secondary">
+                    <a href="nuevo_domicilio">Agregar Domicilio</a>
+                </button>
+            </div>
+        </div>
+        <div class="row">
+          <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Calle</th>
+                        <th>Número</th>
+                        <th>Localidad</th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for domicilio in domicilios %}
+                    <tr>
+                        <td>{{domicilio.id}}</td>
+                        <td>{{domicilio.calle}}</td>
+                        <td>{{domicilio.numero}}</td>
+                        <td>{{domicilio.localidad}}</td>
+                        <td>
+                            <button class="btn btn-secondary">
+                                <a href="detalle_domicilio/{{domicilio.id}}">Detalle</a>
+                            </button>
+                        </td>
+                        <td>
+                            <button class="btn btn-warning">
+                                <a href="editar_domicilio/{{domicilio.id}}">Editar</a>
+                            </button>
+                        </td>
+                        <td>
+                            <button class="btn btn-danger">
+                                <a href="eliminar_domicilio/{{domicilio.id}}">Eliminar</a>
+                            </button>
+                        </td>
+                    </tr>
+
+                    {% endfor %}
+                </tbody>
+
+            </table>
+            <div class="row">
+                <div class="col-md-12">
+                    <button class="btn btn-secondary">
+                        <a class="btn btn-secondary" href="{% url 'index' %}">Regresar</a>
+                    </button>
+                </div>
+            </div>
+        </div>
+  </div>
+
+</body>
+</html>

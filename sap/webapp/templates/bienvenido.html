@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bienvenido</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+</head>
+    <body>
+        <h1>Bienvenido al Sistema de Administración de Personas</h1>
+        <p>Usted ha ingresado correctamente al sistema</p>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                Número de Personas: {{no_personas}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <button class="btn btn-secondary">
+                    <a href="nueva_persona">Nueva Persona</a>
+                </button>
+            </div>
+        </div>
+        <div>
+
+
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Nombre</th>
+                        <th>Email</th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for persona in personas %}
+                    <tr>
+                        <td>{{persona.id}}</td>
+                        <td>{{persona.nombre}} {{persona.apellido}}</td>
+                        <td>{{persona.email}}</td>
+                        <td>
+                            <button class="btn btn-secondary">
+                                <a href="detalle_persona/{{persona.id}}">Detalle</a>
+                            </button>
+                        </td>
+                        <td>
+                            <button class="btn btn-warning">
+                                <a href="editar_persona/{{persona.id}}">Editar</a>
+                            </button>
+                        </td>
+                        <td>
+                            <button class="btn btn-danger">
+                                <a href="eliminar_persona/{{persona.id}}">Eliminar</a>
+                            </button>
+                        </td>
+                    </tr>
+
+                    {% endfor %}
+                </tbody>
+
+            </table>
+            <!-- Ir al listado de domicilios -->
+            <div class="row">
+                <div class="col-md-12">
+                    <button class="btn btn-secondary">
+                        <a href="domicilios">Domicilios</a>
+                    </button>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+    </body>
+</html>
